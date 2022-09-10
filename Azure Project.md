@@ -1,4 +1,4 @@
 ## Step 1: Create a Resource Group
 
-#### Make sure the region same with other resources that are going to be created.
+### Make sure the region same with other resources that are going to be created.
 
