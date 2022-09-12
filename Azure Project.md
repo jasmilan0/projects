@@ -38,3 +38,50 @@
 #### f) After that hit create. 
 
 
+## Step 4: Configuring the access server
+
+#### a) After the deployment is complete we are going to configure the access server. I have a Mac so I will be using terminal. 
+
+#### b) Copy the Public IP address of the access server virtual machine.
+<img width="1425" alt="Screen Shot 2022-09-12 at 7 11 16 PM" src="https://user-images.githubusercontent.com/58121854/189774003-d782deb3-e019-43ea-9f75-90094de519d8.png">
+
+#### c)Run this command “ssh username@publicIPAddress”
+<img width="558" alt="Screen Shot 2022-09-12 at 7 12 13 PM" src="https://user-images.githubusercontent.com/58121854/189774103-85a76169-ace6-45fb-8837-5f5e3bcbff56.png">
+
+#### d) Type yes and enter your password you had set.
+<img width="564" alt="Screen Shot 2022-09-12 at 7 13 19 PM" src="https://user-images.githubusercontent.com/58121854/189774211-6623366c-d387-45f6-8eeb-7ea4f4c2633c.png">
+
+#### e) Agree to the agreement.
+
+#### f) When configuring the initial settings leave everything default. 
+<img width="855" alt="Press ENTER" src="https://user-images.githubusercontent.com/58121854/189774322-04350a51-b8d9-44f4-9d64-142733219fa2.png">
+
+<img width="516" alt="Initial Configuration Complete!" src="https://user-images.githubusercontent.com/58121854/189774370-f03668a6-6acc-471a-b678-0c877672d058.png">
+
+#### g) Change the password of the user we just created
+<img width="402" alt="client1@openvpnas2-$ sudo passwd openvpn" src="https://user-images.githubusercontent.com/58121854/189774404-0cc645a5-1265-46b4-bcef-083fc9902189.png">
+
+#### h) Once it Is set up, it will say to access OpenVPN via urls. These URLs will not work because they are local IP. To configure the rest of the settings, use the Public IP address. Another thing, Google Chrome will not let you access the public IP address because there is no valid certificate. However, Safari lets you.
+
+#### i) Go to the search bar and enter your public IP address "https://public.ip.address"
+
+#### j) Click “visit this website”. Download the OpenVPN Connect. After downloaded go the admin sign in page. The username would be “openvpn” and whatever password you set as. 
+<img width="956" alt="This Connection Is Not Private" src="https://user-images.githubusercontent.com/58121854/189774696-d8a8269e-34e4-4d61-9e4a-5601ac00b5e4.png">
+
+#### k) Under configuration and network settings, change the host name from the local ip to the Public IP address Azure assigned to the openvpn access server virtual machine. 
+<img width="1250" alt="Server Network Settings" src="https://user-images.githubusercontent.com/58121854/189775141-c40ecd71-335f-41d3-b4bf-94048e813336.png">
+
+#### l) As you scroll down to the client web server, make the changes as it appears on the image.
+<img width="1165" alt="Screen Shot 2022-09-12 at 7 24 07 PM" src="https://user-images.githubusercontent.com/58121854/189775233-0a365dfd-a681-46fe-804e-b1d9bcd0b242.png">
+
+#### m) Save the changes and on the top it will say update running server. Make sure to select that option otherwise if logged out it will not update and you would have to start all over. 
+
+#### n) Under Configuration and VPN settings, specify which subnets computers able to have. Since we created the accountant subnet, we are going to specify the accountant subnet.
+<img width="1014" alt="Screen Shot 2022-09-03 at 10 02 20 AM" src="https://user-images.githubusercontent.com/58121854/189775815-533949a1-de97-480c-9cd8-421254d8a4d9.png">
+
+#### o) Save the changes and update the server
+
+
+## Step 5: Adding a virtual machine to the accountant subnet
+
+#### a) Create a new virtual machine
