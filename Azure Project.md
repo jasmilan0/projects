@@ -84,4 +84,13 @@
 
 ## Step 5: Adding a virtual machine to the accountant subnet
 
-#### a) Create a new virtual machine
+#### a) Create a new virtual machine. Make sure the right resource group is selected
+<img width="579" alt="Screen Shot 2022-09-12 at 7 44 54 PM" src="https://user-images.githubusercontent.com/58121854/189777043-e3934e7b-d28b-4c5c-8019-17ddd98089f6.png">
+
+#### b) For storage, I would recommend Premium SDD however, if cost is a issue you can select Standard HDD. 
+<img width="687" alt="Screen Shot 2022-09-12 at 7 48 33 PM" src="https://user-images.githubusercontent.com/58121854/189777364-206b12d6-fe50-4ce1-a9fa-00ec6d5c18ba.png">
+
+#### c) For networkng, make sure the subnet for this machine is accountant or which ever one you want it to be.
+<img width="753" alt="Screen Shot 2022-09-12 at 7 50 17 PM" src="https://user-images.githubusercontent.com/58121854/189778086-5b322f54-e0fa-4905-9280-c0c7c8cf2dd9.png">
+
+#### d) After this, you can review and create. Again you can have auto shutdown configured which can allow you to save money. Tags are also very useful but for the purpose of this demonstration, we will skip over them.
