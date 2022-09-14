@@ -90,7 +90,17 @@
 #### b) For storage, I would recommend Premium SDD however, if cost is a issue you can select Standard HDD. 
 <img width="687" alt="Screen Shot 2022-09-12 at 7 48 33 PM" src="https://user-images.githubusercontent.com/58121854/189777364-206b12d6-fe50-4ce1-a9fa-00ec6d5c18ba.png">
 
+
 #### c) For networkng, make sure the subnet for this machine is accountant or which ever one you want it to be.
 <img width="753" alt="Screen Shot 2022-09-12 at 7 50 17 PM" src="https://user-images.githubusercontent.com/58121854/189778086-5b322f54-e0fa-4905-9280-c0c7c8cf2dd9.png">
 
 #### d) After this, you can review and create. Again you can have auto shutdown configured which can allow you to save money. Tags are also very useful but for the purpose of this demonstration, we will skip over them.
+
+## Step 6: Configuring the NSG
+
+#### a) Select the Windows 10 VM and go to Networking
+<img width="1436" alt="Screen Shot 2022-09-14 at 9 22 55 AM" src="https://user-images.githubusercontent.com/58121854/190165740-eee902ac-c2c8-4170-9d32-c792a79cc941.png">
+
+#### b) Since the client wants to be able to have to secure access and internet connection we are going to just change the RDP rules. 
+<img width="466" alt="Screen Shot 2022-09-14 at 9 24 43 AM" src="https://user-images.githubusercontent.com/58121854/190166326-9bad9571-eb28-4f51-b5dd-8ddb86712fb8.png">
+
