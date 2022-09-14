@@ -128,3 +128,8 @@
 #### g) It still failed. So far it's working as attended. Now go back to Azure and download the Windows 10 RDP Session File with the Private IP.
 <img width="563" alt="Screen Shot 2022-09-14 at 9 44 17 AM" src="https://user-images.githubusercontent.com/58121854/190170912-3efba412-fc99-49bb-8137-156810f2fdbc.png">
 
+#### h) It is asking for credentials. Everything is working. Hit Continue when it comes to the certificate.
+<img width="527" alt="Screen Shot 2022-09-14 at 9 46 12 AM" src="https://user-images.githubusercontent.com/58121854/190171782-8c820abd-42ee-4c46-bc02-cc1b37189f98.png">
+
+#### i) Now see if the VM has internet access.
+<img width="1440" alt="Screen Shot 2022-09-14 at 9 50 06 AM" src="https://user-images.githubusercontent.com/58121854/190172360-8852a71c-79ab-4212-881f-806d8d90a858.png">
