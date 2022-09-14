@@ -90,17 +90,41 @@
 #### b) For storage, I would recommend Premium SDD however, if cost is a issue you can select Standard HDD. 
 <img width="687" alt="Screen Shot 2022-09-12 at 7 48 33 PM" src="https://user-images.githubusercontent.com/58121854/189777364-206b12d6-fe50-4ce1-a9fa-00ec6d5c18ba.png">
 
-
 #### c) For networkng, make sure the subnet for this machine is accountant or which ever one you want it to be.
 <img width="753" alt="Screen Shot 2022-09-12 at 7 50 17 PM" src="https://user-images.githubusercontent.com/58121854/189778086-5b322f54-e0fa-4905-9280-c0c7c8cf2dd9.png">
 
 #### d) After this, you can review and create. Again you can have auto shutdown configured which can allow you to save money. Tags are also very useful but for the purpose of this demonstration, we will skip over them.
+
 
 ## Step 6: Configuring the NSG
 
 #### a) Select the Windows 10 VM and go to Networking
 <img width="1436" alt="Screen Shot 2022-09-14 at 9 22 55 AM" src="https://user-images.githubusercontent.com/58121854/190165740-eee902ac-c2c8-4170-9d32-c792a79cc941.png">
 
-#### b) Since the client wants to be able to have to secure access and internet connection we are going to just change the RDP rules. 
+#### b) Since the client wants to be able to have to secure access and internet connection we are going to just change the RDP rules. This rule will allow a RDP session only if connected to the VPN and only communication with other local VMs under the accountant subnet. 
 <img width="466" alt="Screen Shot 2022-09-14 at 9 24 43 AM" src="https://user-images.githubusercontent.com/58121854/190166326-9bad9571-eb28-4f51-b5dd-8ddb86712fb8.png">
+
+
+## Step 7: Testing
+
+#### a) Download the RDP Session file from azure. This is under the "Connect" option. For the first testing option, we are going to download with the public ip address and test whether or not our NSG rule is working or not. Make sure to not connect to the VPN yet. 
+<img width="1436" alt="Screen Shot 2022-09-14 at 9 31 30 AM" src="https://user-images.githubusercontent.com/58121854/190167678-7670cd1b-026b-4bc7-9c21-d2c1901b833e.png">
+
+#### b) In order to run the file, you must have a remote desktop application. After running the file you will get a error. This shows that the rule is working.
+<img width="565" alt="Screen Shot 2022-09-14 at 9 33 02 AM" src="https://user-images.githubusercontent.com/58121854/190168216-ef63f79f-9b25-4c79-9834-6288763f996b.png">
+
+#### c) Now let's try to connect to the VPN and using the same RDP session. To connect to the VPN, enter the public IP of the OpenVPN Access Server we created. Hit Next
+<img width="416" alt="Screen Shot 2022-09-14 at 9 39 22 AM" src="https://user-images.githubusercontent.com/58121854/190169683-3a76532e-65d3-4100-b082-34430fc30c63.png">
+
+#### d) Since we never added a certificate, which is recommeneded, we are going to accept the self signed certificate.
+<img width="254" alt="Screen Shot 2022-09-14 at 9 40 22 AM" src="https://user-images.githubusercontent.com/58121854/190169997-eca430dc-0b3c-49d3-a127-4d90400988f5.png">
+
+#### e) If you followed the exact steps, the username should be openvpn and whatever password you set. Accept the certificate again. I had enabled the auto login. Do not select that. I had received an error because my login was not configured that way
+<img width="397" alt="Screen Shot 2022-09-14 at 9 41 34 AM" src="https://user-images.githubusercontent.com/58121854/190170283-e2ee4547-db38-4a43-8f14-957da1ae142b.png">
+
+#### f) We are connected. Now try running the RDP session with the public IP.
+<img width="376" alt="Screen Shot 2022-09-14 at 9 42 58 AM" src="https://user-images.githubusercontent.com/58121854/190170627-a26f1f60-ca7f-4f4c-b93f-86ab1cb581ff.png">
+
+#### g) It still failed. So far it's working as attended. Now go back to Azure and download the Windows 10 RDP Session File with the Private IP.
+<img width="563" alt="Screen Shot 2022-09-14 at 9 44 17 AM" src="https://user-images.githubusercontent.com/58121854/190170912-3efba412-fc99-49bb-8137-156810f2fdbc.png">
 
