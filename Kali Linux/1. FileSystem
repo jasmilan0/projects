@@ -1,0 +1,9 @@
+### FileSystem
+#### /bin - basic programs
+#### /sbin - system programs
+#### /etc - configuration files
+#### /tmp - temporary files
+#### /usr/bin - applications
+#### /usr/share - application support and data files
+
+### Basic Linux Commands
