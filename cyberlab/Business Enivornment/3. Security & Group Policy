@@ -1,0 +1,4 @@
+## Step 1: Disabling Local Admin Account
+
+##### a) In the DC machine, run CMD as an administrator. Run the following command "net user administrator /active:no"
+
