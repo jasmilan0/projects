@@ -1,67 +1,67 @@
-***** This project is being completed in Azure and RDP port will be exposed to the public to all of the VMs. <br />
-***** If replicating this in real environment, make sure use of VPN or SASE is implemented.<br />
+***** This project is being completed in Azure and RDP port may be exposed to the public  <br />
+***** If replicating this in real environment, make sure use of VPN/Bastion/SASE is implemented.<br />
 ***** I will not be setting up the VPN access server to save time with the setup of this lab<br />
+***** I will not be setting up DHCP server since entire setup is done in the cloud
 
-## Step 1: Create a new resource group(RG)
-#### I am setting the regions of all resources in Central India to save cost.
-![Screen Shot 2024-06-14 at 10 39 18 PM](https://github.com/jasmilan0/projects/assets/58121854/860186ef-39b2-4f7d-b349-481765efd36f)
+## Step 1: Create a resource group(RG)
+<img width="894" alt="Screen Shot 2024-06-16 at 4 33 49 PM" src="https://github.com/jasmilan0/projects/assets/58121854/aaa657f5-a3eb-4694-8f95-02820d7fe724">
 
-## Step 2: Open the newly created RG and hit create 
-![Screen Shot 2024-06-14 at 10 49 12 PM](https://github.com/jasmilan0/projects/assets/58121854/f2449303-b511-4953-bd04-c556b1a79197)
+## Step 2: Create a virtual network in that RG
+<img width="886" alt="Screen Shot 2024-06-16 at 4 39 16 PM" src="https://github.com/jasmilan0/projects/assets/58121854/ccdacd41-4815-49f4-9ce7-86497931c721">
 
-## Step 3: Search for "Virtual Network" by Microsoft
-![Screen Shot 2024-06-14 at 10 51 32 PM](https://github.com/jasmilan0/projects/assets/58121854/4d93733d-1f6c-4477-9ea9-7629b20b907e)
+<img width="897" alt="Screen Shot 2024-06-16 at 4 43 07 PM" src="https://github.com/jasmilan0/projects/assets/58121854/b627aa27-9111-4a18-b987-db209ab5e7c5">
 
-## Step 4: Create the virtual network in the RG created
-![Screen Shot 2024-06-14 at 10 52 55 PM](https://github.com/jasmilan0/projects/assets/58121854/92f36fd5-8031-44eb-831a-7e8f03ab5516)
+## Step 3: Create a virtual machine for the AD Server
+<img width="899" alt="Screen Shot 2024-06-16 at 4 49 41 PM" src="https://github.com/jasmilan0/projects/assets/58121854/82df34b5-dd90-4e43-a70b-356e4ed4b3c0">
 
-***** I am skipping the security just because I will be removing this lab from Azure. AGAIN this is for testing *****
+<img width="895" alt="Screen Shot 2024-06-16 at 4 50 00 PM" src="https://github.com/jasmilan0/projects/assets/58121854/89ade3a4-47e1-4d8e-b4e3-ac0441a71df6">
 
-#### I created 4 subnets. For each subnet, I didn't configure "Private subnet, Security, Service Endpoints, Subnet Delegation or network policy for private endpoints". Skip tags and create the network
-![Screen Shot 2024-06-14 at 10 58 14 PM](https://github.com/jasmilan0/projects/assets/58121854/25bbacb8-70e3-437e-ad99-94bcbfb78220)
+<img width="844" alt="Screen Shot 2024-06-16 at 4 50 19 PM" src="https://github.com/jasmilan0/projects/assets/58121854/4470b76c-dcfa-4031-b264-0bf424c1f1b6">
 
-## Step 5: In the RG, hit create > Search for virtual machine
-![Screen Shot 2024-06-14 at 11 02 49 PM](https://github.com/jasmilan0/projects/assets/58121854/b9bf2502-3299-40c3-9c12-53ac835cce0e)
+<img width="870" alt="Screen Shot 2024-06-16 at 4 50 58 PM" src="https://github.com/jasmilan0/projects/assets/58121854/ffb216a0-34be-4a4e-a74e-581a26b22b81">
 
-## Step 6: Configure the AD server as below
-![Screen Shot 2024-06-14 at 11 05 16 PM](https://github.com/jasmilan0/projects/assets/58121854/8578a181-ccf2-4843-9e9b-e52341dec8fe)
+<img width="852" alt="Screen Shot 2024-06-16 at 4 52 42 PM" src="https://github.com/jasmilan0/projects/assets/58121854/07162a11-6bbf-47b0-ad32-e14d5e41c97b">
 
-#### Allow public inbound port and allow port 3389 for RDP
+<img width="824" alt="Screen Shot 2024-06-16 at 4 52 58 PM" src="https://github.com/jasmilan0/projects/assets/58121854/7218a30f-18bc-45fe-94a7-ae95a0bbf6af">
 
-#### Disk Settings
-![Screen Shot 2024-06-14 at 11 06 55 PM](https://github.com/jasmilan0/projects/assets/58121854/9fba3338-1b92-470c-8404-f174c730a9aa)
+#### I skipped the monitoring and management tab and left it default for this AD-Server-VM
 
-#### Network Settings
-![Screen Shot 2024-06-14 at 11 07 46 PM](https://github.com/jasmilan0/projects/assets/58121854/fc1802af-db91-4e17-8352-b50a29be383f)
+## Step 4: Connect to the VM using Bastion or native RDP if you allowed public inbound access to port 389
+#### I am using Bastion because it is convenient to use via the browser.
 
-#### You can skip management, monitoring, advanced and tags
+## Step 5: Add ADDS and DNS Server via Server Manager which opens by default
+#### Select Add roles and features
+<img width="408" alt="Screen Shot 2024-06-16 at 5 52 40 PM" src="https://github.com/jasmilan0/projects/assets/58121854/76f65271-4296-4556-953a-d6ccd03c149a">
 
-## Wait for everything to be deployed. This can take some time
+<img width="789" alt="Screen Shot 2024-06-16 at 5 53 34 PM" src="https://github.com/jasmilan0/projects/assets/58121854/b086c460-f44f-4f26-a8a8-8ebba86d31d4">
 
-## Step 7: Configure the NIC assigned to AD-Server
-#### a) Select the NIC
-![Screen Shot 2024-06-14 at 11 12 51 PM](https://github.com/jasmilan0/projects/assets/58121854/1602cfa8-f965-4c90-b91b-b940f0dc893c)
+<img width="785" alt="Screen Shot 2024-06-16 at 5 54 56 PM" src="https://github.com/jasmilan0/projects/assets/58121854/4d0ebaa6-74a6-44c3-9e87-37552e1316d8">
 
-#### b) Select IP Configurations on the Nav Bar > Assign it a static IP
-![Screen Shot 2024-06-14 at 11 13 34 PM](https://github.com/jasmilan0/projects/assets/58121854/09fba0b5-9f1c-4fc6-9f0a-fdfd7ff7a529)
+<img width="783" alt="Screen Shot 2024-06-16 at 5 55 44 PM" src="https://github.com/jasmilan0/projects/assets/58121854/ca498703-6649-470d-81ef-fc4dee1f3981">
 
-## Step 8: Create a new NIC in the RG. This will be used for internal routing
-![Screen Shot 2024-06-14 at 11 16 44 PM](https://github.com/jasmilan0/projects/assets/58121854/6bc6f245-fea7-497e-9d8c-9f3f735a8940)
+#### Hit next on "Features", "AD DS", "DNS Server", and then hit Install
 
-#### Configure the following settings of the NIC, make sure the IPv4 address is static and set to 10.0.10.4
-![Screen Shot 2024-06-14 at 11 48 40 PM](https://github.com/jasmilan0/projects/assets/58121854/54a67ddc-dae9-43e7-af20-bbc761276852)
+#### Once installed, you have to promote the server to Domain Controller
 
-## Step 9: Go into the Ad Server VM > Network Settings > And attach the NIC created. For this VM has to stopped and restarted later
+<img width="464" alt="Screen Shot 2024-06-16 at 6 00 41 PM" src="https://github.com/jasmilan0/projects/assets/58121854/01bb51e8-4e22-4ce4-b915-7606bd529af4">
 
+<img width="763" alt="Screen Shot 2024-06-16 at 6 01 14 PM" src="https://github.com/jasmilan0/projects/assets/58121854/bdf21153-647b-4403-bbc2-d82f575d346d">
 
-***** Delete "Sales, HR and Tech Subnet". I forgot that we will be having DHCP server setup to assign to workstations *****
+<img width="762" alt="Screen Shot 2024-06-16 at 6 01 38 PM" src="https://github.com/jasmilan0/projects/assets/58121854/6d83f25b-053b-43b4-bd1a-56bccc63ef3d">
 
-## Step 9: To access the AD Server VM, select the VM > Connect > Native RDP > Make sure prereqs are green > Download the RDP file
-![Screen Shot 2024-06-14 at 11 39 42 PM](https://github.com/jasmilan0/projects/assets/58121854/7ebd2412-b064-4562-ac18-3395326ae119)
+#### Skip DNS delegation
+#### I used the default NETBIOS NAME and file path and then install 
+#### VM will restart
 
+## Step 6: Make sure the IP for AD Server NIC is static
+#### This has to be configured via Azure and will require to restart the AD-Server VM
 
-## CONFIGURATION OF AD SERVER
+#### Go into the RG > select the AD server NIC
+<img width="1431" alt="Screen Shot 2024-06-16 at 6 11 27 PM" src="https://github.com/jasmilan0/projects/assets/58121854/f26fdbd8-641a-453a-94d4-d63be1ca9457">
 
-## Step 1: Open
+#### Restart the AD-Server VM
 
+## ----------------------------------------------------------- ##
 
+#### Now we will create a subnet for client workstations
+#### This will be in a different page
