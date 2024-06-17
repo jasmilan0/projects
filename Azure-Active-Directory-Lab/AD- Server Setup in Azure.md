@@ -61,6 +61,11 @@
 
 #### Restart the AD-Server VM
 
+## Step 7: Add subnets to the NSG
+![Screen Shot 2024-06-16 at 9 41 31 PM](https://github.com/jasmilan0/projects/assets/58121854/0514c21f-5346-4389-9f78-9352fe2e0663)
+
+
+
 ## ----------------------------------------------------------- ##
 
 #### Now we will create a subnet for client workstations
