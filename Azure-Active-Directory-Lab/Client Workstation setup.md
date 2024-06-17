@@ -41,4 +41,45 @@
 #### You would have to create a rule in the Client VM firewall to allow ICMP traffic <br />
 #### If everything is configured correctly, you should be able to ping each other
 
-## Step 5: 
+## Step 5: Connect Client VM to Windows AD
+
+#### Open Settings > System > About > "Domain or Workgroup"
+
+![Screen Shot 2024-06-16 at 9 57 49 PM](https://github.com/jasmilan0/projects/assets/58121854/f3f44287-f3d0-4da5-a9ec-c07d6174aea4)
+
+#### Select Change > Select Domain > Enter the domain name > In my case "singh.local"
+![Screen Shot 2024-06-16 at 9 58 59 PM](https://github.com/jasmilan0/projects/assets/58121854/f3bc82c1-2bbb-4496-9674-6da72de9f42c)
+
+#### Enter the admin credentials of the server > Once entered you would get a window saying Welcome
+![Screen Shot 2024-06-16 at 10 00 16 PM](https://github.com/jasmilan0/projects/assets/58121854/2231be32-18bd-4742-ac33-ed529424bfa5)
+
+## Step 6: Restart the VM; I restarted within the VM
+
+## Step 7: Confirmation
+#### Go to Settings > Accounts > Access Work or School
+![Screen Shot 2024-06-16 at 10 02 40 PM](https://github.com/jasmilan0/projects/assets/58121854/60bc1501-771b-4371-8071-fb4b1e191131)
+
+
+
+## CLIENT INTERNET ACCESS
+
+## Step 1: Dissassociate the public IP address given to the Windows Server NIC
+
+## Step 2: Create NAT Gateways
+#### Search for NAT Gateways in the search
+
+#### Create a NAT
+![Screen Shot 2024-06-16 at 10 58 05 PM](https://github.com/jasmilan0/projects/assets/58121854/c40aba90-4483-4746-a127-50cae27a2df4)
+
+#### Select the public IP; I already created the NAT, so I am getting an error
+![Screen Shot 2024-06-16 at 10 58 37 PM](https://github.com/jasmilan0/projects/assets/58121854/e897a938-70df-4725-808c-b1d23c1a6f21)
+
+#### In Subnet, select both subnets and then create the NAT
+
+## Step 3: Restart the VMs
+#### I am doing this just to make sure everything is applied properly
+
+
+## ---------------------------------------------------------------------------------------------
+
+#### I will configure the GPO and OUs in the next doc
