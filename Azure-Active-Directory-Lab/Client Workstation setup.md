@@ -37,4 +37,8 @@
 #### Since there is no public IP to the Client VM, you will have to connect via Bastion
 #### When configuring bastion, it will create a virtual subnet automatically and can take around 30-45 minutes, sometimes even longer
 
-#### If you try to ping the VMs, most likely you would be able to ping the AD Server VM from the Client VM. But you would be unsuccessful the other way around. </br
+#### If you try to ping the VMs, most likely you would be able to ping the AD Server VM from the Client VM. But you would be unsuccessful the other way around. <br />
+#### You would have to create a rule in the Client VM firewall to allow ICMP traffic <br />
+#### If everything is configured correctly, you should be able to ping each other
+
+## Step 5: 
